@@ -1,0 +1,24 @@
+
+<?php
+
+include("conn.php");
+ if(isset($POST['submitted']))
+ {
+
+    $email_id = $_POST['email'];
+    $pass = $_POST['psw'];
+    $ach_name = "HELLO";
+    $ach_num = "HELLO";
+
+     $sqlins = "INSERT INTO staffnational (Staff id,Staff name,Name of Conference,No. of Conference attended) VALUES ('$psw','$email_id','$ach_name','$ach_num')";
+
+        if(!mysqli_query($connect,$sqlins))
+        {
+            die("ERROR INSERTING RECORD");
+        }
+        $newrec = "1 record added to database";
+        echo $newrec;
+
+ }
+ }
+?>
